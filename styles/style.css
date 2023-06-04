@@ -1,0 +1,151 @@
+@import url("https://fonts.cdnfonts.com/css/w95fa");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 10;
+}
+
+body {
+  position: relative;
+}
+
+.loadingSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../assets/startScreen.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  animation: startingDisplay 2s forwards;
+}
+.loadingSection .loadingBar {
+  width: 100%;
+  height: 40px;
+  background-color: gray;
+  animation: loadingAnimation 1s infinite;
+}
+.loadingSection .loadingBar .loadingThumb {
+  float: right;
+  width: 500px;
+  height: 40px;
+  background: rgb(152, 152, 152);
+  background: linear-gradient(85deg, rgba(152, 152, 152, 0) 0%, rgb(1, 1, 96) 50%, rgba(152, 152, 152, 0) 100%);
+  animation: loading 2s infinite;
+}
+@keyframes loading {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-450%);
+  }
+}
+
+.termianlSectionStart {
+  font-family: "W95FA", sans-serif;
+  background-color: black;
+  font-weight: 100;
+  color: rgb(154, 154, 154);
+  width: 100%;
+  height: 100vh;
+  padding: 200px;
+  font-size: 1.5rem;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: none;
+}
+.termianlSectionStart .caretSpan {
+  animation: caret 1s infinite;
+}
+@keyframes caret {
+  0% {
+    border-bottom: 5px solid gray;
+  }
+  50% {
+    border: none;
+  }
+  100% {
+    border-bottom: 5px solid gray;
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.desktopSection {
+  width: 100%;
+  height: 100vh;
+  background-color: teal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "W95FA", sans-serif;
+  display: none;
+}
+.desktopSection .desktopicons {
+  width: 150px;
+  height: 800px;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.desktopSection .desktopicons .icons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.desktopSection .desktopicons .icons h2 {
+  font-size: large;
+}
+
+.startMenu {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(182, 182, 182);
+  box-shadow: 0px -3px 3px white;
+  border: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.startMenu .startButton {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "W95FA", sans-serif;
+  font-size: x-large;
+  background: none;
+  border-top: 3px solid white;
+  border-left: 2px solid white;
+  box-shadow: 2px 2px 2px black;
+}
+.startMenu .dateFooter {
+  width: 150px;
+  height: 40px;
+  background-color: rgb(182, 182, 182);
+  box-shadow: inset 1px 1px 10px black;
+}
+
+.displayFlex {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
