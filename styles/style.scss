@@ -1,7 +1,8 @@
-@import url('https://fonts.cdnfonts.com/css/w95fa');
+@import url("https://fonts.cdnfonts.com/css/w95fa");
 //windows 95 font
-$main-font95: 'W95FA', sans-serif;
+$main-font95: "W95FA", sans-serif;
 $main-color: rgb(182, 182, 182);
+$main-blue: rgb(2, 2, 188);
 
 * {
     margin: 0;
@@ -10,8 +11,16 @@ $main-color: rgb(182, 182, 182);
     font-weight: 10;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-family: $main-font95;
+    cursor: default;
+}
+
 body {
     position: relative;
+    overflow: hidden;
 }
 
 .loadingSection {
@@ -27,6 +36,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     animation: startingDisplay 2s forwards;
+    // display: none;
 
     & .loadingBar {
         width: 100%;
@@ -59,7 +69,6 @@ body {
         }
     }
 }
-
 
 .termianlSectionStart {
     font-family: $main-font95;
@@ -110,7 +119,7 @@ body {
     justify-content: space-between;
     font-family: $main-font95;
     display: none;
-    
+    overflow: hidden;
 
     & .desktopicons {
         width: 150px;
@@ -126,12 +135,14 @@ body {
             align-items: center;
             flex-direction: column;
             justify-content: center;
+            width: 120px;
+            height: 100px;
 
             & h2 {
                 font-size: large;
+                cursor: default;
             }
         }
-       
     }
 }
 
@@ -172,4 +183,245 @@ body {
 
 .displayFlex {
     display: flex;
+}
+
+#deploy-window {
+    display: none;
+    position: absolute;
+    background-color: #c0c0c0;
+    width: 200px;
+    padding: 2px 3px;
+    z-index: 1;
+    font-family: Arial, sans-serif;
+    border-left: 2px solid white;
+    border-top: 3px solid white;
+    border-right: 3px solid black;
+    border-bottom: 2px solid black;
+
+    & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        & li {
+            padding: 8px 30px;
+            cursor: default;
+            background-color: #c0c0c0;
+            border-bottom: 3px solid #000;
+            box-shadow: inset -1px -1px 2px white;
+            font-weight: 200;
+
+            &:hover {
+                background-color: $main-blue;
+
+                & a {
+                    color: white;
+                }
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+span {
+    border-bottom: 2px solid black;
+}
+
+.backgroundHover {
+    background-color: $main-blue;
+}
+
+.propertiesWindow {
+    width: 700px;
+    height: 700px;
+    background-color: $main-color;
+    position: absolute;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+
+    & header {
+        width: 100%;
+        height: 30px;
+        background-color: $main-blue;
+        font-family: $main-font95;
+        color: white;
+        font-size: small;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 0 10px;
+
+        & button {
+            width: 20px;
+            height: 20px;
+            background-color: $main-color;
+            font-weight: 900;
+        }
+    }
+
+    & .buttonsAndContent {
+        width: 670px;
+        height: 600px;
+        background-color: $main-color;
+        border: none;
+
+        & .propButtons {
+            width: 100%;
+            height: 30px;
+            background-color: $main-color;
+            display: flex;
+            flex-direction: row;
+            transform: translateY(2px);
+
+            & button {
+                padding: 10px;
+                height: 30px;
+                font-family: $main-font95;
+                color: black;
+                background-color: $main-color;
+                text-align: center;
+                border-top: 2px solid white;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-left: 2px solid white;
+                border-bottom: none;
+                border-right: 3px solid black;
+            }
+
+            & :first-child {
+                z-index: 5;
+            }
+        }
+
+        & .propContent {
+            width: 100%;
+            height: 550px;
+            border-left: 3px solid rgb(231, 231, 231);
+            border-bottom: 3px solid black;
+            border-right: 3px solid black;
+            border-top: 4px solid white;
+            z-index: 2 !important;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+
+            & .monitor {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                & .mainmonitor {
+                    width: 200px;
+                    height: 150px;
+                    background-color: $main-color;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    border-top: 3px solid white;
+                    border-bottom: 3px solid black;
+                    border-left: 2px solid white;
+                    border-right: 3px solid black;
+
+                    & .screen {
+                        width: 170px;
+                        height: 120px;
+                        background-color: teal;
+                    }
+                }
+                & .screendown {
+                    width: 100px;
+                    height: 15px;
+                    border: 3px solid black;
+                    border-bottom-left-radius: 30px;
+                    border-bottom-right-radius: 30px;
+                }
+
+                & .screenleg {
+                    width: 70px;
+                    height: 10px;
+                    background-color: $main-color;
+                    border: 3px solid black;
+                }
+
+                & .leg {
+                    width: 150px;
+                    height: 10px;
+                    border: 3px solid rgb(88, 88, 88);
+                }
+            }
+
+            & .propertiesContent {
+                width: 100%;
+                height: 330px;
+                background-color: rgb(110, 85, 85);
+                display: flex;
+                align-items: center;
+
+                & .patterns {
+                    width: 300px;
+                    height: 280px;
+                    background-color: rgb(255, 0, 0);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-right: 10px;
+
+                    & .centerpatern {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        & .paternsCotnainer {
+                            width: 270px;
+                            height: 130px;
+                            background-color: white;
+                            overflow-y: scroll;
+    
+                            & .none {
+                                margin-bottom: 0px;
+                                height: 25px;
+                                display: flex;
+                                align-items: center;
+                                font-family: $main-font95;
+                                padding: 0 10px;
+    
+                                &:hover {
+                                    background-color: blue;
+                                    color: white;
+                                    border: 2px dotted white;
+                                }
+                            }
+                        }
+                    }
+
+                    & .paternButton {
+                        width: 150px;
+                        height: 40px;
+                        transform: translateX(60px);
+                       
+                    }
+                }
+            }
+        }
+    }
 }
