@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   animation: startingDisplay 2s forwards;
+  display: none;
 }
 .loadingSection .loadingBar {
   width: 100%;
@@ -84,14 +85,6 @@ body {
   }
 }
 
-.displayNone {
-  display: none;
-}
-
-.displayBlock {
-  display: block;
-}
-
 .desktopSection {
   width: 100%;
   height: 100vh;
@@ -100,7 +93,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-family: "W95FA", sans-serif;
-  display: none;
   overflow: hidden;
 }
 .desktopSection .desktopicons {
@@ -333,19 +325,27 @@ span {
 .propertiesWindow .buttonsAndContent .propContent .propertiesContent {
   width: 100%;
   height: 330px;
-  background-color: rgb(110, 85, 85);
+  background-color: rgb(182, 182, 182);
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.propertiesWindow .buttonsAndContent .propContent .propertiesContent .wallLabel {
+  transform: translateX(-150px) translateY(10px);
+  background-color: rgb(182, 182, 182);
+  font-family: "W95FA", sans-serif;
 }
 .propertiesWindow .buttonsAndContent .propContent .propertiesContent .patterns {
-  width: 300px;
+  width: 400px;
   height: 280px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(182, 182, 182);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-right: 10px;
+  border: 4px solid rgb(216, 216, 216);
 }
 .propertiesWindow .buttonsAndContent .propContent .propertiesContent .patterns .centerpatern {
   width: 100%;
@@ -358,6 +358,18 @@ span {
   height: 130px;
   background-color: white;
   overflow-y: scroll;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+}
+.propertiesWindow .buttonsAndContent .propContent .propertiesContent .patterns .centerpatern .paternsCotnainer::-webkit-scrollbar {
+  background-color: rgb(201, 201, 201);
+  width: 30px;
+}
+.propertiesWindow .buttonsAndContent .propContent .propertiesContent .patterns .centerpatern .paternsCotnainer::-webkit-scrollbar-thumb {
+  height: 1px;
+  background-color: gray;
 }
 .propertiesWindow .buttonsAndContent .propContent .propertiesContent .patterns .centerpatern .paternsCotnainer .none {
   margin-bottom: 0px;
@@ -376,4 +388,38 @@ span {
   width: 150px;
   height: 40px;
   transform: translateX(60px);
+  background-color: rgb(182, 182, 182);
+  border-top: 3px solid white;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  border-left: 3px solid white;
+  font-family: "W95FA", sans-serif;
+}
+.propertiesWindow .applybuttons {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(182, 182, 182);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px;
+  justify-content: flex-end;
+}
+.propertiesWindow .applybuttons button {
+  width: 100px;
+  height: 30px;
+  font-family: "W95FA", sans-serif;
+  background-color: rgb(182, 182, 182);
+  border-top: 3px solid white;
+  border-right: 3px solid black;
+  border-left: 3px solid white;
+  border-bottom: 3px solid black;
+}
+
+.displayNone {
+  display: none !important;
+}
+
+.displayBlock {
+  display: block !important;
 }/*# sourceMappingURL=style.css.map */

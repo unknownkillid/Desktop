@@ -12,7 +12,7 @@
 <body>
 
     <div class="propertiesWindow" id="properties">
-        <header>
+        <header id="displayHeader">
             <h2>Display Properties</h2>
             <button class="propXButton" id="propXButton">X</button>
         </header>
@@ -27,25 +27,24 @@
             <div class="propContent">
                 <div class="monitor">
                     <div class="mainmonitor">
-                        <div class="screen"></div>
+                        <div class="screen" id="screen"></div>
                     </div>
                     <div class="screendown"></div>
                     <div class="screenleg"></div>
                     <div class="leg"></div>
                 </div>
                 <div class="propertiesContent">
-                    <div class="patterns">
+                    <label for="patern" class="wallLabel">Wallpapers</label>
+                    <div class="patterns" id="patern">
                         <div class="centerpatern">
                             <div class="paternsCotnainer">
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
-                                <div class="none">(none)</div>
+                                <div class="none" value="1">(none)</div>
+                                <div class="none" value="2">(none)</div>
+                                <div class="none" value="3">(none)</div>
+                                <div class="none" value="4">(none)</div>
+                                <div class="none" value="5">(none)</div>
+                                <div class="none" value="6">(none)</div>
+                                <div class="none" value="7">(none)</div>
                             </div>
                         </div>
                         <br><button class="paternButton">Edit Patern</button>
@@ -53,8 +52,12 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-
+        <div class="applybuttons">
+            <button class="ok" id="okay">OK</button>
+            <button class="cancel" id="cancel">Cancel</button>
+            <button class="apply" id="apply">Apply</button>
         </div>
     </div>
 
@@ -62,7 +65,7 @@
         <ul>
             <li><a href="#"><span class="span">A</span>ctive Desktop</a></li>
             <li><a href="#">Arrange <span>I</span>cons</li>
-            <li><a href="#">Re<span>f</span>resh</a></li>
+            <li id="refresh"><a href="#" >Re<span>f</span>resh</a></li>
             <li><a href="#"><span>P</span>aste</a></li>
             <li><a href="#">Paste Shortcut</a></li>
             <li><a href="#">New</a></li>
@@ -141,6 +144,7 @@
 
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="JavaScript/index.js"></script>
 </body>
