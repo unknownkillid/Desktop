@@ -125,6 +125,10 @@ const okay = document.getElementById('okay').addEventListener('click', () => {
   localStorage.setItem('selectedDesktopBackground', selectedDesktopBackground);
 });
 
+const cancel = document.getElementById('cancel').addEventListener('click', () => {
+  properties.style.display = 'none'
+})
+
 const apply = document.getElementById('apply').addEventListener('click', () => {
   desktop.style.background = screens.style.background;
 

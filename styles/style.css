@@ -115,6 +115,7 @@ body {
 .desktopSection .desktopicons .icons h2 {
   font-size: large;
   cursor: default;
+  background-color: teal;
 }
 
 .startMenu {
