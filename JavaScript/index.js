@@ -153,3 +153,15 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 1000);
+
+const explorerMain = document.getElementById('explorer');
+const explorerLogo = document.getElementById('explorerClickLogo').addEventListener('dblclick', () => {
+  explorerMain.style.display = 'flex';
+})
+
+const minimizeExplorer = document.getElementById('minimizeExplorer').addEventListener('click', () => {
+  explorerMain.style.display = 'none';
+})
+const quitExplorer = document.getElementById('quitExplorer').addEventListener('click', () => {
+  explorerMain.style.display = 'none';
+})

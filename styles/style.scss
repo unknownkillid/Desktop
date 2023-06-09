@@ -256,6 +256,7 @@ span {
     align-items: center;
     justify-content: space-between;
     display: none;
+    z-index: 400 !important;
 
     & header {
         width: 100%;
@@ -494,8 +495,55 @@ span {
 .explorer {
     width: 100%;
     height: 100vh;
-    background-color: black;
     position: absolute;
     top: 0;
     z-index: 6;
+    display: flex;
+    flex-direction: column;
+    display: none;
+
+    & .explorerHeader {
+        width: 100%;
+        height: 30px;
+        background-color: gray;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    & .explorer-header-buttons {
+        & button {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    & .explorerMainContent {
+        width: 100%;
+        height: 100%;
+        background-color: $main-color;
+        padding: 20px;
+    }
+
+    & .explorer-input {
+        width: 100%;
+        height: 50px;
+        background-color: $main-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        border: 1px solid black;
+
+        & h3 {
+            padding: 10px;
+        }
+
+        & input {
+            width: 100%;
+            padding: 0 10px;
+        }
+    }
 }
