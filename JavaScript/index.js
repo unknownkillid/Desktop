@@ -142,3 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     desktop.style.background = selectedDesktopBackground;
   }
 });
+
+let timeFooter = document.getElementById("currentTime");
+
+function updateTime() {
+    let currentTime = new Date();
+    let formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    timeFooter.textContent = formattedTime;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
