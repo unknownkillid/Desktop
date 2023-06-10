@@ -14,7 +14,7 @@
 
 <body>
 
-    <div class="propertiesWindow" id="properties">
+    <div class="propertiesWindow moved" id="properties">
         <header id="displayHeader">
             <h2>Display Properties</h2>
             <button class="propXButton" id="propXButton">X</button>
@@ -139,7 +139,7 @@
         </div>
 
 
-        <div class="explorer" id="explorer">
+        <div class="explorer size moved main" id="explorer">
             <header class="explorerHeader">
                 <div class="explorer-header-title">
                     <h3>Internet Explorer</h3>
@@ -147,7 +147,7 @@
 
                 <div class="explorer-header-buttons">
                     <button id="minimizeExplorer"><i class="fa-solid fa-window-minimize"></i></button>
-                    <button id="resizeExplorer"><i class="fa-solid fa-window-restore"></i></button>
+                    <button id="resizeExplorer" class="resizeClick"><i class="fa-solid fa-window-restore"></i></button>
                     <button id="quitExplorer"><i class="fa-solid fa-xmark"></i></button>
                 </div>
             </header>
@@ -158,7 +158,7 @@
                 </div>
 
                 <div class="explorer-input">
-                    <input type="text">
+                    <input type="text" placeholder="www.address.com" id="explorerInput">
                 </div>
                 <div class="explorer-link-button">
                     <h3>Links</h3>
@@ -166,6 +166,13 @@
             </div>
 
             <div class="explorerMainContent">
+                <div class="error" id="error">
+                    <header>
+                        Error 0x187REde109
+                    </header>
+                   <br><br> <h2>Error code 0x187REde109, Explorer detected in 2023</h2>
+                    <br> <button id="errorOk">OK</button>
+                </div>
                 <h1>Loading, Please wait 9816723 Years.</h1>
                 <h2>Thanks for using our service...</h2>
 
