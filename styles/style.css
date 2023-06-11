@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   animation: startingDisplay 2s forwards;
+  display: none;
 }
 .loadingSection .loadingBar {
   width: 100%;
@@ -92,7 +93,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-family: "W95FA", sans-serif;
-  display: none;
   overflow: hidden;
   position: relative;
 }
@@ -107,6 +107,9 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 20px 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .desktopSection .desktopicons .icons {
   display: flex;
@@ -220,6 +223,8 @@ span {
   user-select: none;
   border-top: 3px solid white;
   border-left: 3px solid white;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -438,8 +443,8 @@ span {
 }
 
 .explorer {
-  width: 100%;
-  height: 100vh;
+  width: 50%;
+  height: 50%;
   position: absolute;
   top: 0;
   left: 0;
@@ -527,9 +532,51 @@ span {
   height: 30px;
 }
 
+.techStackpage {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: none;
+}
+.techStackpage header {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(2, 2, 188);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  flex-direction: row;
+}
+.techStackpage header .techHeaderLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  font-family: "W95FA", sans-serif;
+}
+.techStackpage header .techHeaderLogo img {
+  padding: 5px;
+}
+.techStackpage header .techstrackHeaderButtons button {
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
 .widthresizeSmaller {
-  width: 50% !important;
-  height: 70% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .windowresizeBigger {

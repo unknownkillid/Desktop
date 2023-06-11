@@ -2,19 +2,19 @@ const startScreen = document.getElementById('startUp')
 const termianl = document.getElementById('terminal')
 const desktop = document.getElementById('desktop')
 
-function loading() {
-  setTimeout(() => {
-    startScreen.classList.add('displayNone')
-    termianl.classList.add('displayBlock')
+// function loading() {
+//   setTimeout(() => {
+//     startScreen.classList.add('displayNone')
+//     termianl.classList.add('displayBlock')
 
-    setTimeout(() => {
-      termianl.classList.remove('displayBlock')
-      desktop.classList.add('displayFlex')
-    }, 5000);
-  }, 5000);
-}
+//     setTimeout(() => {
+//       termianl.classList.remove('displayBlock')
+//       desktop.classList.add('displayFlex')
+//     }, 5000);
+//   }, 5000);
+// }
 
-loading();
+// loading();
 
 
 const deployWindow = document.getElementById("deploy-window");
@@ -161,31 +161,33 @@ setInterval(updateTime, 1000);
 const explorerMain = document.getElementById('explorer');
 const explorerLogo = document.getElementById('explorerClickLogo').addEventListener('dblclick', () => {
   explorerMain.style.display = 'flex';
+  explorerMain.classList.add('windowresizeBigger')
 })
 
 const minimizeExplorer = document.getElementById('minimizeExplorer').addEventListener('click', () => {
   explorerMain.style.display = 'none';
+  explorerMain.classList.remove('windowresizeBigger')
+
 })
 const quitExplorer = document.getElementById('quitExplorer').addEventListener('click', () => {
   explorerMain.style.display = 'none';
+  explorerMain.classList.remove('windowresizeBigger')
+
 })
 
-let flag = false;
+let flag = true;
+const explorerWindow = document.getElementById('explorer')
 function resized() {
-  document.querySelectorAll('.size').forEach(allWindows => {
-    document.querySelectorAll('.resizeClick').forEach(reiszeButtons => {
-      reiszeButtons.addEventListener('click', () => {
-        if (!flag) {
-          allWindows.classList.add('widthresizeSmaller');
-          allWindows.classList.remove('windowresizeBigger')
-          flag = true;
-        } else {
-          flag = false;
-          allWindows.classList.remove('widthresizeSmaller')
-          allWindows.classList.add('windowresizeBigger')
-        }
-      })
-    })
+  document.getElementById('resizeExplorer').addEventListener('click', () => {
+    if (!flag) {
+      explorerWindow.classList.remove('widthresizeSmaller')
+      explorerWindow.classList.remove('windowresizeBigger')
+      flag = true;
+    } else {
+      flag = false;
+      explorerWindow.classList.add('widthresizeSmaller');
+      explorerWindow.classList.add('windowresizeBigger')
+    }
   })
 }
 
@@ -202,15 +204,15 @@ const errorWindow = document.getElementById('error')
 document.getElementById('explorerInput').addEventListener('keydown', ({ keyCode }) => {
   switch (keyCode) {
     case 13:
-      if (!soundPlayed){
+      if (!soundPlayed) {
         errorSound.play();
         soundPlayed = true;
       }
       errorWindow.classList.add('displayFlex')
       document.getElementById('errorOk').addEventListener('click', () => {
-       restartError();
+        restartError();
       })
-      
+
       break;
 
     default:
@@ -234,3 +236,36 @@ function restartError() {
     }, 5000);
   }, 5000);
 }
+
+
+const minimizeTech = document.getElementById('minimizeTech').addEventListener('click', () => {
+  techWindow.style.display = 'none';
+  techWindow.classList.remove('windowresizeBigger')
+})
+const quitTech = document.getElementById('quitTech').addEventListener('click', () => {
+  techWindow.style.display = 'none';
+  techWindow.classList.remove('windowresizeBigger')
+})
+
+let techflag = true;
+const techWindow = document.getElementById('resizedtech')
+function resizedtech() {
+  document.getElementById('resizeTech').addEventListener('click', () => {
+    if (!techflag) {
+      techWindow.classList.remove('widthresizeSmaller')
+      techWindow.classList.remove('windowresizeBigger')
+      techflag = true;
+    } else {
+      techflag = false;
+      techWindow.classList.add('widthresizeSmaller')
+      techWindow.classList.add('windowresizeBigger')
+    }
+  })
+}
+
+resizedtech()
+
+const techClickLogo = document.getElementById('techClickLogo').addEventListener('dblclick', () => {
+  techWindow.style.display = 'flex';
+  techWindow.classList.add('windowresizeBigger')
+})

@@ -103,12 +103,7 @@
     <section class="desktopSection" id="desktop">
         <div class="desktopicons">
             <div class="icons">
-                <img src="assets/myComputer.png" width="50px" alt="">
-                <h2>My Computer</h2>
-            </div>
-            <br><br>
-            <div class="icons">
-                <img src="assets/tech.png" width="50px" alt="">
+                <img src="assets/myComputer.png" id="techClickLogo" width="50px" alt="">
                 <h2>My Tech Stack</h2>
             </div>
             <br><br>
@@ -138,8 +133,24 @@
             </div>
         </div>
 
+        <div class="techStackpage moved size" id="resizedtech">
+            <header>
+                <div class="techHeaderLogo">
+                    <img src="assets/myComputer.png" alt="">
+                    <h3> My Tech Stack</h3>
+                </div>
 
-        <div class="explorer size moved main" id="explorer">
+                <div class="techstrackHeaderButtons">
+                    <button id="minimizeTech"><i class="fa-solid fa-window-minimize"></i></button>
+                    <button id="resizeTech" class="resizeClick"><i class="fa-solid fa-window-restore"></i></button>
+                    <button id="quitTech"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+            </header>
+        </div>
+
+
+        <div class="explorer moved size" id="explorer">
             <header class="explorerHeader">
                 <div class="explorer-header-title">
                     <h3>Internet Explorer</h3>
@@ -170,13 +181,15 @@
                     <header>
                         Error 0x187REde109
                     </header>
-                   <br><br> <h2>Error code 0x187REde109, Explorer detected in 2023</h2>
+                    <br><br>
+                    <h2>Error code 0x187REde109, Explorer detected in 2023</h2>
                     <br> <button id="errorOk">OK</button>
                 </div>
                 <h1>Loading, Please wait 9816723 Years.</h1>
                 <h2>Thanks for using our service...</h2>
 
-               <br><br> <p>The first version of Internet Explorer, (at that time named Microsoft Internet Explorer, later
+                <br><br>
+                <p>The first version of Internet Explorer, (at that time named Microsoft Internet Explorer, later
                     <br> referred to as Internet Explorer 1) made its debut on August 24, 1995. It was a reworked
                     version
                     <br> of Spyglass Mosaic, which Microsoft licensed from Spyglass Inc., like many other companies
